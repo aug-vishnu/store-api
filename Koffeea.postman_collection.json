@@ -1,0 +1,1374 @@
+{
+	"info": {
+		"_postman_id": "34d3f84e-56c9-4d85-8f71-f22977eaa5d8",
+		"name": "Koffeea",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth API",
+			"item": [
+				{
+					"name": "Account",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "customer@kof.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "popopo",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ip}}/auth/login/",
+									"host": [
+										"{{ip}}"
+									],
+									"path": [
+										"auth",
+										"login",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Shop",
+					"item": [
+						{
+							"name": "Shop CUD",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "shop_id",
+											"value": "{{shop_id}}",
+											"description": "PUT - DEL",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "admin@gmail.com",
+											"description": "Only POST",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Admin#123",
+											"description": "Only POST",
+											"type": "text"
+										},
+										{
+											"key": "shop_name",
+											"value": "Koffeea",
+											"type": "text"
+										},
+										{
+											"key": "shop_address",
+											"value": "5/351",
+											"type": "text"
+										},
+										{
+											"key": "shop_mobile",
+											"value": "8667884933",
+											"type": "text"
+										},
+										{
+											"key": "subscription_type",
+											"value": "1",
+											"description": "1 - Sub1 2 - Sub2",
+											"type": "text"
+										},
+										{
+											"key": "subscription_start",
+											"value": "2021-02-02T00:00",
+											"type": "text"
+										},
+										{
+											"key": "subscription_end",
+											"value": "2032-02-02T00:00",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ip}}/auth/shop-cud/",
+									"host": [
+										"{{ip}}"
+									],
+									"path": [
+										"auth",
+										"shop-cud",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Shop List",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "shop_id",
+											"value": "{{shop_id}}",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ip}}/auth/shop-list/",
+									"host": [
+										"{{ip}}"
+									],
+									"path": [
+										"auth",
+										"shop-list",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Shop Detail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{manager_token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "shop_id",
+											"value": "{{shop_id}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ip}}/auth/shop-detail/",
+									"host": [
+										"{{ip}}"
+									],
+									"path": [
+										"auth",
+										"shop-detail",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Admin",
+							"item": [
+								{
+									"name": "Owner CUD",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Token {{admin_token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "email",
+													"value": "johns@aug.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "AugAdmin",
+													"type": "text"
+												},
+												{
+													"key": "owner_id",
+													"value": "{{owner_id}}",
+													"description": "Only DEL",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{ip}}/auth/admin-cud/",
+											"host": [
+												"{{ip}}"
+											],
+											"path": [
+												"auth",
+												"admin-cud",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Owner List",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Token {{admin_token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{ip}}/auth/admin-list/",
+											"host": [
+												"{{ip}}"
+											],
+											"path": [
+												"auth",
+												"admin-list",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Owner Detail",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "shop_id",
+													"value": "{{shop_id}}",
+													"type": "text"
+												},
+												{
+													"key": "owner_id",
+													"value": "{{owner_id}}",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{ip}}/auth/admin-detail/",
+											"host": [
+												"{{ip}}"
+											],
+											"path": [
+												"auth",
+												"admin-detail",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Manager",
+							"item": [
+								{
+									"name": "Manager CUD",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Token {{owner_token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "email",
+													"value": "manager@aug.com",
+													"description": "Only POST",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "AugAdmin",
+													"description": "Only POST",
+													"type": "text"
+												},
+												{
+													"key": "shop_id",
+													"value": "{{shop_id}}",
+													"description": "PUT - DEL",
+													"type": "text"
+												},
+												{
+													"key": "manager_id",
+													"value": "{{manager_id}}",
+													"description": "PUT - DEL",
+													"type": "text"
+												},
+												{
+													"key": "manager_name",
+													"value": "Alex",
+													"description": "Only PUT",
+													"type": "text"
+												},
+												{
+													"key": "manager_address",
+													"value": "Virudhunagar",
+													"description": "Only PUT",
+													"type": "text"
+												},
+												{
+													"key": "manager_mobile",
+													"value": "987984981",
+													"description": "Only PUT",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{ip}}/auth/manager-cud/",
+											"host": [
+												"{{ip}}"
+											],
+											"path": [
+												"auth",
+												"manager-cud",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Manager List",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Token {{owner_token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{ip}}/auth/manager-list/",
+											"host": [
+												"{{ip}}"
+											],
+											"path": [
+												"auth",
+												"manager-list",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Manager Detail",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "shop_id",
+													"value": "{{shop_id}}",
+													"type": "text"
+												},
+												{
+													"key": "manager_id",
+													"value": "{{manager_id}}",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{ip}}/auth/manager-detail/",
+											"host": [
+												"{{ip}}"
+											],
+											"path": [
+												"auth",
+												"manager-detail",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Manager Permission CUD",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Token {{owner_token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "manager_permission_id",
+													"value": "16cafd40-6f3e-4c09-91a0-4d5950d172ab",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{ip}}/auth/manager-permission-cud/",
+											"host": [
+												"{{ip}}"
+											],
+											"path": [
+												"auth",
+												"manager-permission-cud",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Customers",
+					"item": [
+						{
+							"name": "Customer",
+							"item": [
+								{
+									"name": "Customer CUD",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Token {{owner_token}}",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "customer_id",
+													"value": "{{customer_id}}",
+													"description": "PUT - DEL",
+													"type": "text"
+												},
+												{
+													"key": "customer_name",
+													"value": "Benny ",
+													"type": "text"
+												},
+												{
+													"key": "customer_mobile",
+													"value": "687496879",
+													"type": "text"
+												},
+												{
+													"key": "shop_id",
+													"value": "{{shop_id}}",
+													"type": "text"
+												},
+												{
+													"key": "customer_address_1",
+													"value": "Salem",
+													"type": "text"
+												},
+												{
+													"key": "customer_address_2",
+													"value": "ds",
+													"type": "text"
+												},
+												{
+													"key": "customer_address_3",
+													"value": "d",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "customer@kof.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "popopo",
+													"type": "text"
+												},
+												{
+													"key": "customer_type",
+													"value": "1",
+													"description": "1 - Customer 2 - Distributor",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{ip}}/auth/customer-cud/",
+											"host": [
+												"{{ip}}"
+											],
+											"path": [
+												"auth",
+												"customer-cud",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Customer List",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Token {{admin_token}}"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{ip}}/auth/customer-list/",
+											"host": [
+												"{{ip}}"
+											],
+											"path": [
+												"auth",
+												"customer-list",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Customer Detail",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Token {{admin_token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "shop_id",
+													"value": "{{shop_id}}",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "customer_id",
+													"value": "{{customer_id}}",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{ip}}/auth/customer-detail/",
+											"host": [
+												"{{ip}}"
+											],
+											"path": [
+												"auth",
+												"customer-detail",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Vendors",
+					"item": [
+						{
+							"name": "Vendor CUD",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Token {{manager_token}}"
+									},
+									{
+										"key": "",
+										"type": "text",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "customer_id",
+											"value": "{{customer_id}}",
+											"description": "PUT - DEL",
+											"type": "text"
+										},
+										{
+											"key": "vendor_name",
+											"value": "Benny ",
+											"type": "text"
+										},
+										{
+											"key": "vendor_mobile",
+											"value": "687496879",
+											"type": "text"
+										},
+										{
+											"key": "company_name",
+											"value": "Dyes",
+											"type": "text"
+										},
+										{
+											"key": "vendor_address",
+											"value": "Road",
+											"type": "text"
+										},
+										{
+											"key": "vendor_city",
+											"value": "Erode",
+											"type": "text"
+										},
+										{
+											"key": "vendor_feedback",
+											"value": "HI",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ip}}/auth/vendor-cud/",
+									"host": [
+										"{{ip}}"
+									],
+									"path": [
+										"auth",
+										"vendor-cud",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Vendor List",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Token {{owner_token}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{ip}}/auth/vendor-list/",
+									"host": [
+										"{{ip}}"
+									],
+									"path": [
+										"auth",
+										"vendor-list",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Vendor Detail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Token {{owner_token}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "shop_id",
+											"value": "{{shop_id}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "vendor_id",
+											"value": "{{vendor_id}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ip}}/auth/vendor-detail/",
+									"host": [
+										"{{ip}}"
+									],
+									"path": [
+										"auth",
+										"vendor-detail",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Core API",
+			"item": [
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "Product CUD",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Token {{admin_token}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "product_id",
+											"value": "{{product_id}}",
+											"type": "text"
+										},
+										{
+											"key": "product_code",
+											"value": "2qerxdccf",
+											"type": "text"
+										},
+										{
+											"key": "product_name",
+											"value": "Dryer",
+											"type": "text"
+										},
+										{
+											"key": "product_stock",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "product_vendor_price",
+											"value": "50",
+											"type": "text"
+										},
+										{
+											"key": "product_mrp_price",
+											"value": "90",
+											"type": "text"
+										},
+										{
+											"key": "product_gst",
+											"value": "12",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ip}}/core/product-cud/",
+									"host": [
+										"{{ip}}"
+									],
+									"path": [
+										"core",
+										"product-cud",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Product List",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Token {{admin_token}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "product_value",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ip}}/core/product-list/",
+									"host": [
+										"{{ip}}"
+									],
+									"path": [
+										"core",
+										"product-list",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Coupoun",
+					"item": [
+						{
+							"name": "Coupoun Apply",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Token {{admin_token}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "order_id",
+											"value": "{{order_id}}",
+											"type": "text"
+										},
+										{
+											"key": "coupoun_code",
+											"value": "RDGHR",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ip}}/core/coupoun-apply/",
+									"host": [
+										"{{ip}}"
+									],
+									"path": [
+										"core",
+										"coupoun-apply",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Coupoun Remove",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Token {{admin_token}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "order_id",
+											"value": "{{order_id}}",
+											"type": "text"
+										},
+										{
+											"key": "coupoun_code",
+											"value": "RDGHR",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ip}}/core/coupoun-remove/",
+									"host": [
+										"{{ip}}"
+									],
+									"path": [
+										"core",
+										"coupoun-remove",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Coupoun CUD",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Token {{admin_token}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "product_id",
+											"value": "{{product_id}}",
+											"type": "text"
+										},
+										{
+											"key": "coupoun_code",
+											"value": "RDGHR",
+											"type": "text"
+										},
+										{
+											"key": "coupoun_min_value",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "coupoun_discount",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "coupoun_max_discount",
+											"value": "50",
+											"type": "text"
+										},
+										{
+											"key": "coupoun_limit",
+											"value": "90",
+											"type": "text"
+										},
+										{
+											"key": "coupoun_expiry",
+											"value": "2021-09-18T00:00",
+											"type": "text"
+										},
+										{
+											"key": "coupoun_description",
+											"value": "jghghg",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ip}}/core/coupoun-cud/",
+									"host": [
+										"{{ip}}"
+									],
+									"path": [
+										"core",
+										"coupoun-cud",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Coupoun List",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Token {{admin_token}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "product_value",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ip}}/core/coupoun-list/",
+									"host": [
+										"{{ip}}"
+									],
+									"path": [
+										"core",
+										"coupoun-list",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Orders",
+					"item": [
+						{
+							"name": "Order Item CUD",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Token {{customer_token}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "orderitem_id",
+											"value": "{{orderitem_id}}",
+											"type": "text"
+										},
+										{
+											"key": "product",
+											"value": "{{product_id}}",
+											"type": "text"
+										},
+										{
+											"key": "item_quantity",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ip}}/core/order-item-cud/",
+									"host": [
+										"{{ip}}"
+									],
+									"path": [
+										"core",
+										"order-item-cud",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Random Item CUD",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Token {{owner_token}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "orderitem_id",
+											"value": "{{randomitem_id}}",
+											"type": "text"
+										},
+										{
+											"key": "product_name",
+											"value": "Dryer Item",
+											"type": "text"
+										},
+										{
+											"key": "product_price",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "product_quantity",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "product_gst",
+											"value": "12",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ip}}/dockt/random-item-cud/",
+									"host": [
+										"{{ip}}"
+									],
+									"path": [
+										"dockt",
+										"random-item-cud",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Basket List",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Token {{admin_token}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "product_value",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ip}}/core/basket-list/",
+									"host": [
+										"{{ip}}"
+									],
+									"path": [
+										"core",
+										"basket-list",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Check Out",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Token {{customer_token}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "order_payment",
+											"value": "1",
+											"description": "1 : Online 2 : Cash 3 : Not Paid ",
+											"type": "text"
+										},
+										{
+											"key": "order_status",
+											"value": "1",
+											"description": "1 : Full Payment ; 2 : Partial Payment",
+											"type": "text"
+										},
+										{
+											"key": "customer_id",
+											"value": "{{customer_id}}",
+											"type": "text"
+										},
+										{
+											"key": "amount_paid",
+											"value": "20",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "order_discount",
+											"value": "100",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ip}}/core/check-out/",
+									"host": [
+										"{{ip}}"
+									],
+									"path": [
+										"core",
+										"check-out",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Order List",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Token {{owner_token}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "filter_type",
+											"value": "1",
+											"description": "1 :  All 2 : Till 3 : Range ",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ip}}/dockt/sales-list/",
+									"host": [
+										"{{ip}}"
+									],
+									"path": [
+										"dockt",
+										"sales-list",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Invoice Detail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Token {{owner_token}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "order_id",
+											"value": "{{order_id}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ip}}/core/invoice-detail/",
+									"host": [
+										"{{ip}}"
+									],
+									"path": [
+										"core",
+										"invoice-detail",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
